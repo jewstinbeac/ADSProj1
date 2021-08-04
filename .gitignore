@@ -1,2 +1,4 @@
 **/raw_data
 */preprocessed_data/2018JunToAug.parquet
+*/preprocessed_data/weekendsRemovedInvalids.parquet
+*/preprocessed_data/weekdaysRemovedInvalids.parquet
