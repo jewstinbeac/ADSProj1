@@ -4,4 +4,4 @@
 **/preprocessed_data/weekdayRemovedInvalids.parquet
 **/preprocessed_data/weekendsBasicFilter.parquet
 **/preprocessed_data/weekdaysBasicFilter.parquet
-**/preprocessed_data/2018JunToAugCleanedInvalids.parquet
+**/preprocessed_data/2018JunToAugRemovedInvalids.parquet
