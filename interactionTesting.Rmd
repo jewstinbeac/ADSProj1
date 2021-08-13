@@ -1,0 +1,52 @@
+---
+title: "boroughAnalysis"
+author: "Junhong Liu"
+date: "11/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("feather")
+#install.packages("arrow")
+library(feather)
+library(arrow)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r read in the processed feather file, echo = FALSE}
+filepath <- "./preprocessed_data/"
+dailyEarnings <- arrow::read_feather(paste0(filepath, "boroughsDailyEarnings.feather"))
+dailyEarnings <- as.data.frame(dailyEarnings)
+dailyEarnings$Borough <- as.factor(dailyEarnings$Borough)
+dailyEarnings$Weekend <- as.factor(dailyEarnings$Weekend)
+str(df)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r interaction testing, echo=FALSE}
+interactionModel = lm(logDE ~ Weekend * Borough, data = dailyEarnings)
+summary(interactionModel)
+
+additiveModel = lm(logDE ~ Weekend + Borough, data = dailyEarnings)
+summary(additiveModel)
+
+boroughModel = lm(logDE ~ Borough, data = dailyEarnings)
+summary(boroughModel)
+```
+
+```{r}
+anova(additiveModel, interactionModel)
+
+anova(additiveModel, boroughModel)
+```
+
+
