@@ -14,3 +14,13 @@ Any data that has been processed (schema attached, feature engineered, outliers 
 
 Any graphics generated using the data go into the plots folder
 
+# Data Sets
+Data sets used in this project can be obtained from:
+1. Yellow Taxi data from https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page. Select and download the yellow taxi data from June, July, and August of 2018.
+
+2. Weather data from https://www.ncdc.noaa.gov/cdo-web/search. Select "Daily Summaries" as the observation type and select Date Range to be between 01/06/2018 - 31/08/2018.  Select Cities in the "Search For" section and use term "New York". 
+
+	The first result that shows as New York should be downloaded, requesting for data units in metric and data types PRCP, SNWD, SNOW, TAVG, TMAX, TMIN, and AWND.
+
+
+
