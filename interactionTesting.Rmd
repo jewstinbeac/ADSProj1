@@ -38,7 +38,10 @@ summary(boroughModel)
 ```{r, echo=FALSE}
 anova(additiveModel, interactionModel)
 
-anova(additiveModel, boroughModel)
+anova(boroughModel, additiveModel)
 ```
 
+```{r}
+plot(boroughModel)
+```
 
